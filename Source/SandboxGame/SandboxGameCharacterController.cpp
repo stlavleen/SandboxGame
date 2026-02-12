@@ -4,9 +4,7 @@
 #include "SandboxGameCharacterController.h"
 #include "DeskLamp.h"
 
-void ASandboxGameCharacterController::SetupInputComponent()
+void ASandboxGameCharacterController::SetupDeskLampInput(ADeskLamp* deskLamp)
 {
-	// TODO
-	// auto objects = ;
-	// InputComponent->BindAction<ADeskLamp>("TestDeskLamp", EInputEvent::IE_Pressed, ADeskLamp::StaticClass(), &ADeskLamp::ToggleTheLight);
+	InputComponent->BindAction("TestDeskLamp", EInputEvent::IE_Pressed, deskLamp, &ADeskLamp::ToggleTheLight);
 }

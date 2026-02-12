@@ -3,6 +3,7 @@
 #include "SandboxGameGameMode.h"
 #include "SandboxGameCharacter.h"
 #include "UObject/ConstructorHelpers.h"
+#include "SandboxGameCharacterController.h"
 
 ASandboxGameGameMode::ASandboxGameGameMode()
 {
@@ -12,4 +13,6 @@ ASandboxGameGameMode::ASandboxGameGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	PlayerControllerClass = ASandboxGameCharacterController::StaticClass();
 }

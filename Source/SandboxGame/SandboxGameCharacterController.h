@@ -14,6 +14,6 @@ class SANDBOXGAME_API ASandboxGameCharacterController : public APlayerController
 {
 	GENERATED_BODY()
 	
-protected:
-	virtual void SetupInputComponent() override;
+public:
+	void SetupDeskLampInput(class ADeskLamp* deskLamp);
 };

@@ -3,6 +3,7 @@
 
 #include "DeskLamp.h"
 #include "Components/PointLightComponent.h"
+#include "SandboxGameCharacterController.h"
 
 // Sets default values
 ADeskLamp::ADeskLamp()
@@ -22,7 +23,12 @@ void ADeskLamp::BeginPlay()
 	auto playerController = GetWorld()->GetFirstPlayerController();
 
 	if (playerController != nullptr)
-		playerController->InputComponent->BindAction("TestDeskLamp", EInputEvent::IE_Pressed, this, &ADeskLamp::ToggleTheLight);
+	{
+		auto characterController = Cast<ASandboxGameCharacterController>(playerController);
+
+		if (characterController != nullptr)
+			characterController->SetupDeskLampInput(this);
+	}
 }
 
 void ADeskLamp::InitializeDeskLampComponents()
@@ -34,6 +40,7 @@ void ADeskLamp::InitializeDeskLampComponents()
 	SetSMComponent(Toggle, ToggleMeshPath);
 
 	PointLight = CreateDefaultSubobject<UPointLightComponent>("PointLight");
+	PointLight->SetRelativeLocation(FVector(0.f, 9.f, 35.f));
 	PointLight->SetVisibility(false);
 }
 
