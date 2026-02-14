@@ -3,7 +3,6 @@
 
 #include "DeskLamp.h"
 #include "Components/PointLightComponent.h"
-#include "SandboxGameCharacterController.h"
 
 // Sets default values
 ADeskLamp::ADeskLamp()
@@ -19,16 +18,6 @@ ADeskLamp::ADeskLamp()
 void ADeskLamp::BeginPlay()
 {
 	Super::BeginPlay();
-
-	auto playerController = GetWorld()->GetFirstPlayerController();
-
-	if (playerController != nullptr)
-	{
-		auto characterController = Cast<ASandboxGameCharacterController>(playerController);
-
-		if (characterController != nullptr)
-			characterController->SetupDeskLampInput(this);
-	}
 }
 
 void ADeskLamp::InitializeDeskLampComponents()
