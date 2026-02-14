@@ -33,8 +33,8 @@ public:
 	void ToggleTheLight();
 
 private:
-	const TCHAR* DeskLampMeshPath = TEXT("StaticMesh'/Game/ExternalAssets/StaticMeshes/deskLamp_DeskLamp.deskLamp_DeskLamp'");
-	const TCHAR* ToggleMeshPath = TEXT("StaticMesh'/Game/ExternalAssets/StaticMeshes/deskLamp_Toggle.deskLamp_Toggle'");
+	const TCHAR* DeskLampMeshPath = TEXT("StaticMesh'/Game/ExternalAssets/StaticMeshes/DeskLamp/deskLamp_DeskLamp.deskLamp_DeskLamp'");
+	const TCHAR* ToggleMeshPath = TEXT("StaticMesh'/Game/ExternalAssets/StaticMeshes/DeskLamp/deskLamp_Toggle.deskLamp_Toggle'");
 
 private:
 	void InitializeDeskLampComponents();
