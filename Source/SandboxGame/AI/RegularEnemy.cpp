@@ -24,7 +24,7 @@ void ARegularEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	GoToTarget();
+	//GoToTarget();
 }
 
 // Called to bind functionality to input
