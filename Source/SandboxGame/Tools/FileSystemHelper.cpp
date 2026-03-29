@@ -21,17 +21,8 @@ TArray<FString> UFileSystemHelper::GetFilesNames(const FString folderName) const
 	return out;
 }
 
-FString UFileSystemHelper::GetBuildPath() const
-{
-	return FPaths::ConvertRelativePathToFull(FPaths::RootDir());
-}
-
 FString UFileSystemHelper::GetBuildGamePath() const
 {
-	auto rootDir = GetBuildPath();
-	auto gameName = FApp::GetProjectName();
-	auto& gameDir = rootDir.Append(gameName);
-
-	return gameDir;
+	return FPaths::ConvertRelativePathToFull(FPaths::ProjectDir());
 }
 

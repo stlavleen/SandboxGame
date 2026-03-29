@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class SANDBOXGAME_API UFileSystemHelper : public UObject
 {
 	GENERATED_BODY()
@@ -17,9 +17,6 @@ class SANDBOXGAME_API UFileSystemHelper : public UObject
 public:
 	UFUNCTION(BlueprintCallable)
 	TArray<FString> GetFilesNames(const FString folderName) const;
-
-	UFUNCTION(BlueprintCallable)
-	FString GetBuildPath() const;
 
 	UFUNCTION(BlueprintCallable)
 	FString GetBuildGamePath() const;
